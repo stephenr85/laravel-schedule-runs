@@ -2,6 +2,7 @@
 
 namespace Rushing\ScheduleRuns\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
@@ -12,7 +13,7 @@ class ScheduleRun extends Model
 {
     use SchemalessAttributesTrait;
 
-    public const UPDATED_AT = false;
+    public const UPDATED_AT = null;
 
     public $timestamps = true;
 
@@ -25,4 +26,9 @@ class ScheduleRun extends Model
     protected $schemalessAttributes = [
         'task_data',
     ];
+
+    public function scopeWithTaskData(): Builder
+    {
+        return $this->task_data->modelScope();
+    }
 }
