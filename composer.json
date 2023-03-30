@@ -1,6 +1,6 @@
 {
     "name": "rushing/laravel-schedule-runs",
-    "description": "",
+    "description": "Track when the last time a task/command/whatever was executed.",
     "type": "package",
     "autoload": {
         "psr-4": {
@@ -21,17 +21,13 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../../*/*",
+            "url": "../*",
             "options": {
                 "symlink": true
             }
         }
     ],
     "extra": {
-        "branch-alias": {
-            "dev-main": "dev-master",
-            "dev-master": "dev-main"
-        },
         "laravel": {
             "providers": [
                 "Rushing\\ScheduleRuns\\ServiceProvider"
