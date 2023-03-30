@@ -1,0 +1,41 @@
+{
+    "name": "rushing/laravel-schedule-runs",
+    "description": "",
+    "type": "package",
+    "autoload": {
+        "psr-4": {
+            "Rushing\\ScheduleRuns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stephen Rushing"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "spatie/laravel-package-tools": "^1.14.0",
+        "spatie/laravel-schemaless-attributes": "^2.4"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-main": "dev-master",
+            "dev-master": "dev-main"
+        },
+        "laravel": {
+            "providers": [
+                "Rushing\\ScheduleRuns\\ServiceProvider"
+            ]
+        }
+    }
+}
