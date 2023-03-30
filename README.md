@@ -5,7 +5,7 @@ Inspired by (Tofandel's Stack Overflow response)[https://stackoverflow.com/a/735
 ## Install
 
 ```
-composer require stephenr85/laravel-schedule-runs
+composer require rushing/laravel-schedule-runs
 php artisan schedule-runs:install
 ```
 
