@@ -21,7 +21,8 @@ class MyCommand {
 
     public function getScheduleRunHandle()
     {
-
+        // The class name is used by default in the trait, but you can override here.
+        return static::class;
     }
 
     public function handle()
