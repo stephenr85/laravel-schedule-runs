@@ -17,7 +17,7 @@ trait HasScheduleRuns {
 
     public function getLastScheduleRun()
     {
-        return $this->scheduleRuns()->latest();
+        return $this->scheduleRuns()->latest()->first();
     }
 
     public function setLastScheduleRun($time = null, $taskData = [])
@@ -31,7 +31,7 @@ trait HasScheduleRuns {
 
     public function scopeWhereLastScheduleRun($query, $columns = ['created_at', 'updated_at'], $operator = '>=', $override = false)
     {
-        $when = $override ?: $this->getLastScheduleRun()->created_at;
+        $when = $override ?: $this->getLastScheduleRun()?->created_at ?: now()->addYears(-100);
         $query->where(function($query) use ($when, $operator, $columns) {
             collect($columns)->each(fn($col) => $query->orWhere($col, $operator, $when));
         });
